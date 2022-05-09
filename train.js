@@ -239,3 +239,197 @@
 // }
 
 // test(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+// let name = document.querySelector('header');
+// console.dir(name);
+
+//любое выражение всегда возвращает значение!
+//site effects - выражения с побочными действиями
+// console.log(10);
+//ссылочный тип - это объект
+/*объект - это набор свойств состаящая из названия(ключа) и его значения*/
+//массив это объект
+// const objectA = {
+//   a: 10,
+//   b: true
+// }
+// const copyOfA = objectA;
+// copyOfA.a = 20;
+
+// console.log(objectA);
+// console.log(copyOfA);
+// console.log(typeof(console.log(copyOfA)));
+
+// const object1 = {
+//   a: 11,
+//   b: "abc",
+//   c: true,
+// };
+
+// const object2 = object1;
+
+// object2.c = "Ivan";
+
+// object2.d = function name(a) {
+//   console.log("Hello", a);
+// };
+
+// console.log(object1);
+// object1.d((object2.b = "Vasya"));
+// console.log(object1);
+
+// function a() {
+//   console.log("Hey there");
+// }
+// a();
+// a = 10;
+// console.log(a);
+
+// const a = () => {
+//   console.log("Hey there");
+// };
+// a();
+//------------Объект------------
+/* если объект содержит функцию как значение - тогда это называется метод!*/
+/*метод - это свойство объекта, значение которого - функция*/
+//объект - это тип значений
+//объект это тип переменных
+/* переменные которые будут содержать тип объект, рекомендуется объявлять через const*/
+
+// const myCity = {
+//   city: 'Comrat'
+// }
+
+// myCity.popular = 28000;
+// console.log(myCity);
+
+// myCity.country = 'Moldova';
+// console.log(myCity);
+
+// delete myCity.popular;
+// console.log(myCity);
+
+// const myCity = {
+//   city: 'New York'
+// }
+
+// myCity['popular'] = true;
+// console.log(myCity);
+
+// const countryPropertyName = 'contry';
+
+// myCity[countryPropertyName] = 'USA';
+// console.log(myCity);
+
+// const myCity = {
+//   city: "New York",
+//   info: {
+//     isPopular: true,
+//     country: "USA",
+//   },
+// };
+
+// console.log(myCity.info.isPopular);
+// console.log(myCity.info["isPopular"]);
+// delete myCity.info.isPopular;
+// console.log(myCity);
+//сокращенная запись name: name => name,
+//сокращенные свойства рекомендуется размещать в начале
+// const name = "Bogdan";
+// const postsQty = 23;
+// const userProfile = {
+//   name,
+//   postsQty,
+//   hasSignedAgreement: false,
+// };
+// console.log(userProfile);
+
+//глобальный объект Window и globalThis - это одно и тоже
+
+// const myCity = {
+//   city: "New York",
+//   cityGreeting() {
+//     console.log("Greetings!!");
+//   },
+// };
+
+// myCity.cityGreeting();
+
+//json - формат обмена данными между компьтерами в интернете
+
+// const object = {
+//   userId: 1,
+//   id: 1,
+//   title: 'Test title',
+//   status: {
+//     completed:false,
+//   },
+// }
+//конвертируем из js в Json
+// const json = JSON.stringify(object);
+// console.log(json);
+//конвертируем из Json в js
+// const js = JSON.parse(json);
+// console.log(js);
+
+//мутация объекта - это изменение свойств объекта, на которую ссылается переменная
+//создаем копии объекта
+
+//-----------вариант1------------
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   surName: {
+//     bot: "Vasya",
+//   },
+// };
+
+// const person2 = Object.assign({}, person);
+
+// person2.age = 26;
+// person2.surName = "Kolya";
+// console.log(person.age);
+// console.log(person2.age);
+// console.log(person2.surName);
+
+//-----------вариант2--------
+
+// const person = {
+//   name: "Bob",
+//   age: 25
+// }
+//оператор три точки ... разделяет объект на свойства
+// const person2 = {...person};
+// person2.name = 'Alise'
+// console.log(person2.name);
+// console.log(person.name);
+
+//---------вариант3----------
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   surName: {
+//     bot: "Vasya",
+//   },
+// };
+
+// const person2 = JSON.parse(JSON.stringify(person));
+// person2.name = "Alise";
+// person2.surName.bot = "Ivan";
+// console.log(person2.name);
+// console.log(person.name);
+// console.log(person.surName.bot);
+// console.log(person2.surName.bot);
+// console.log(person);
+// console.log(person2);
+
+function apple (a, b) {
+  let c;
+  a = a + 1;
+  c = a + b;
+  return c;
+}
+
+console.dir(apple)
