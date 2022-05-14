@@ -425,11 +425,181 @@
 // console.log(person);
 // console.log(person2);
 
-function apple (a, b) {
-  let c;
-  a = a + 1;
-  c = a + b;
-  return c;
-}
+// function apple (a, b) {
+//   let c;
+//   a = a + 1;
+//   c = a + b;
+//   return c;
+// }
 
-console.dir(apple)
+// console.dir(apple)
+
+// const personOne = {
+//   name: "Bob",
+//   age: 21,
+// };
+
+// function increasePersonAge(person) {
+//   const updatePerson = Object.assign({}, person);
+//   updatePerson.age += 1;
+//   return updatePerson;
+// }
+
+// const updatePersonOne = increasePersonAge(personOne);
+// console.log(personOne.age);
+// console.log(updatePersonOne.age);
+
+//Колбэк функции - это те функции которые вызываются внутри других функций
+
+// function printMyName() {
+//   console.log('Mihail');
+// }
+// console.log('Start');
+// setTimeout(printMyName, 2000);
+
+// const a = 5;
+// function myFn() {
+//   function innerFn() {
+//     console.log(a);
+//   }
+//   innerFn();
+// }
+
+// myFn();
+
+//use strict - строгий режим
+// запрещает использование необъявленных переменных
+//логические оператор ! (не) всегда возвращает либо true либо false
+//операторы && (и) || (или) возвращает значение одного из опарендов  и являются операторами короткого замыкания
+
+// console.log("Bogdan" || "default value");
+// let b = 10;
+// b && console.log('Выполнено');
+
+// оператор && если оба аргумента правильны то вернет значение последнего аргумента, если один из них не правильный то вернет значение  первого аргумента
+
+// let a = 5,
+//     b = 10;
+// console.log(a && b);
+// с = false;
+// a && b && c && d //ищет первое ложное и возвращает его
+//вернет результат выражения c
+
+// a || b || c || d // ищет первое true значение и возвращет его результат
+
+// let a, b, c, d = false;
+// b = true;
+// console.log(a || b || c || d);
+
+//--------оператор ...
+
+// const button = {
+//   width: 200,
+//   text: "Buy",
+// };
+
+// const redButton = {
+//   ...button,
+//   color: "red",
+// };
+
+// console.table(redButton);
+
+// const defaultButton = {
+//   height: 500,
+//   width: 600,
+//   color: "black",
+//   border: 2,
+// };
+
+// const bigButton = {
+//   ...defaultButton,
+//   height: 800,
+//   width: 700,
+// };
+
+// bigButton.height = 200;
+// console.table(bigButton);
+// console.table(defaultButton);
+
+// const redButton = {
+//   color: "red",
+//   width: 200,
+// };
+
+// const blueButton = {
+//   color: "blue",
+//   height: 500,
+// };
+
+// const button = {
+//   ...redButton,
+//   ...blueButton,
+//   color: "transparent",
+// };
+
+// console.table(button);
+// const name = "Mihail";
+// const city = "Comrat";
+
+// console.log(`Меня зовут ${name}, Я живу в городе ${city}`);
+//---функциональнные выражения, функции без имени, помжно присвоить переменной, можно использовать в качесте аттрибутов--
+// setTimeout(function() {
+//   console.log('Message');
+// }, 1000);// выведет сообщение через 1 секунду
+
+//--стрелочная функция - это выражение, всегда анонимные, вместо ключевого слова function есть =>
+
+// const myFunction = (a, b) => {
+//   let c;
+//   a = a + 1;
+//   c = a + b;
+//   return c;
+// };
+
+// console.log(myFunction(5, 3));
+// setTimeout(() => {
+//   console.log('Message');
+// }, 1000);
+
+// a => {тело} - это стрелочная функция с одни параметром
+// const sum = (a, b) => a + b; //возвращает результат автоматически без return(если тело состоит из одного выражения)
+// console.log(sum(5, 10));
+// ----------------------1-----------------
+// function multByFactor(value, multiplier = 1) {
+//   return value * multiplier;
+// }
+// console.log(multByFactor(10, 2)); //20
+// console.log(multByFactor(5)); //5
+//----------------------2------------------------
+// const multByFactor = function (value, multiplier = 1) {
+//   return value * multiplier;
+// }
+//----------------------3----------------------------
+// const multByFactor = (value, multiplier = 1) => value * multiplier;
+
+// const newPost = (post, addedAt = Date()) => ({
+//   ...post,
+//   addedAt,
+// })
+
+// const firstPost = {
+//   id: 1,
+//   author: 'Bogdan'
+// }
+
+// console.table(newPost(firstPost))
+
+// const newPost = (post, addedAt = Date()) => {
+//   return { ...post, addedAt: addedAt };
+// };
+
+// const firstPost = {
+//   id: 1,
+//   author: "Bogdan",
+// };
+// console.table(newPost(firstPost));
+
+//------------Ошибки----------
+
+
