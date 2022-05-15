@@ -601,5 +601,207 @@
 // console.table(newPost(firstPost));
 
 //------------Ошибки----------
+// const fnWithError = () => {
+//   throw new Error("Some error");
+// };
+// fnWithError();
+// console.log("Continue...");
 
+// try {
+//   Выполнение блока кода
+// } catch (error) {
+//   Этот блок выполняется в случае возникновения ошибок в блоке try
+// }
 
+// const fnWithError = () => {
+//   throw new Error("Some error");
+// };
+// try {
+//   fnWithError();
+// } catch (error) {
+//   console.error(error)
+//   console.log(error.message);
+// }
+// console.log("Continue...");
+
+//Выражения могут быть использованы как аргументы в вызовах функций, в отличии от инструкций
+//ВЫРАЖЕНИЯ ВСЕГДА ВОЗВРАЩАЮТ ЗНАЧЕНИЯ
+
+//Способ проверки инструкции и выражения(способ отличить), необходимо передать в функцию в качестве аргументов то что хотите проверить...
+// function myFn(a) {
+//   console.log(a);
+// }
+
+// const b = true;
+// let c = 10;
+
+// myFn(2 + 3)//5
+// myFn(b)//true
+// myFn(c = c + 1)//11
+// myFn(c = c + 1;)// error нельзя передать инструкцию
+// myFn(let d)//error нельзя передать инструкцию
+
+//------------------Массивы----------------
+
+// const myArray = [1, 2, 3];
+// console.log(myArray);
+
+// const myArray2 = new Array(1, 2, 3);
+// console.log(myArray2);
+
+// const myObj = {
+//   0: 1,
+//   1: 2,
+// }
+// console.log(myObj[0]);// 1// если свойство числовое, то обращение к нему через точку выбросит ошибку
+// const myArray = [1, 2, 3, 4];
+// console.log(myArray);
+// console.log(myArray.length);
+
+// myArray[2] = 'abc';
+// console.log(myArray);
+// console.log(myArray[2]);
+
+// myArray[4] = true;
+// console.log(myArray);
+// console.log(myArray.length);
+
+// const myArray = [1, 2, 3];
+// myArray.push(4);//добовляет элемент в конец массива
+// console.log(myArray);
+// myArray.push(true);
+// console.log(myArray);
+// myArray.pop();
+// console.log(myArray);
+// const removedElement = myArray.pop();//удаляет элемент с конца массива и возвращает значение
+// console.log(myArray);
+// console.log(removedElement);
+// myArray.unshift(true);//добавляет элемент в начало массива
+// console.log(myArray);
+// myArray.shift();//удаляет первый элемент массива и возвращает значение(удаленый элемент)
+// console.log(myArray);
+//эти методы не создают новый массив они мутируют(изменяют) оригинал, так как массив это объект в переменной хранится ссылка на массив а не сам массив
+
+//---------------forEach--------------
+//перебирает все элементы массива и выполняет определенные действия с этими элементами
+// const myArray = [1, 2, 3];
+// console.log(myArray);
+
+// myArray.forEach(el => console.log(el * 2))//2 4 6
+
+// console.log(myArray);//метод forEach не меняет оригинальный массив
+//forEach - всегда возвращает underfind
+
+//--------------Map------------------------
+//перебирает массив как и forEach, но результат выдает абсолютно новый массив сформированный из результат cakkback функции
+// const myArray = [1, 2, 3];
+// console.log(myArray);
+
+// const newArray = myArray.map(el => el * 3)///[3, 6, 9]
+
+// console.log(newArray);//[3, 6, 9]
+// console.log(myArray);//[1, 2, 3]
+
+// const myArray = [1, 2, 3];
+// console.log(myArray);
+
+// const newArray = myArray.map((el) => {
+//   return el * 3;
+// });
+// console.log(newArray);
+// в функциональных выражениях нельзя неявно возвращать результат как в стрелочных функциях, то есть нельзя сокращать фигурные скобки в теле функции
+
+//--------------Деструктуризация------------
+
+// const userProfile = {
+//   name: "Bogdan",
+//   commentsQty: 23,
+//   hasSignedAgreement: false,
+// };
+
+// const { name, commentsQty } = userProfile;//создает переменные на основании свойств и значений объекта userProfile
+// const { hasSignedAgreement } = userProfile;
+
+// console.log(name);//Bogdan
+// console.log(commentsQty);//23
+// console.log(hasSignedAgreement);//false
+
+//-----Пример деструктуризации объекта------
+
+// const myObj = {
+//   name: 'Vasya',
+//   surName: 'Ivanov',
+//   age: 23,
+// }
+// const { name, age, ...over } = myObj//создали переменные на основании свойств объекта, неиспользованные свойства передали новому объекту over
+// console.log(name);//Vasya
+// console.log(age);//23
+// console.log(over);//{surName: 'Ivanov'}
+// const { surName: familia } = over;//создали новую переменную из объекта over, а так же поменяли название переменной
+// console.log(familia);//Ivanov
+
+//----Пример деструктуризации массива----
+
+// const fruits = ['Apple', 'Banana'];
+// const [fruitOne, fruitTwo] = fruits;
+// console.log(fruitOne);//Apple
+// console.log(fruitTwo);//Banana
+
+// const myArray = [1, 2, 3, 4];
+
+// const [ name, surName, ...over] = myArray;//создали переменные на основании свойсв массива, остальные свойства присвоили новому массиву over
+// console.log(name);//1
+// console.log(surName);//2
+// console.log(over);//[3,4]
+
+// const [ age, height ] = over; //создали переменные на основании массива over
+// console.log(age);//3
+// console.log(height);//4
+
+//-----Пример деструктуризации фунакции----
+
+// const myObj = {
+//   name: "Bogdan",
+//   age: 23,
+//   married: true,
+// };//создали объект
+
+// const userInfo = ({ name, age }) => {/*создали переменную к кторой присвоили стрелочную функцию, где значения оттребутов функции были деструктуризированы из объекта myObj, соответственно значения аттребутов стрелочной функции будет равной переменным созданным благодаря деструктуризации объекта*/
+//   if (!age) {
+//     console.log(`user ${name} -`);
+//   }
+
+//   console.log(`User ${name} +`);
+// };
+
+// userInfo(myObj);//User Bogdan +
+
+//это необходимо когда функции получают объект в качестве параметров(аттрибутов)
+
+// const person = {
+//   age: 20,
+// };
+
+// if (!person.name) {
+//   console.log("Имя не указано");
+// }
+
+// const age = 11;
+// if (age > 18) {
+//   console.log('Is adult');
+// } else if (age >= 12) {
+//   console.log('Is teenager');
+// } else {
+//   console.log('Is child');
+// }
+
+// const sumPositiveNumbers = (a, b) => {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     return "One of the arguments is not a number";
+//   }
+//   if (a <= 0 || b <= 0) {
+//     return "Number are not positive";
+//   }
+//   return a + b;
+// };
+// console.log(sumPositiveNumbers(5, 6));
