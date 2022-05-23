@@ -805,3 +805,130 @@
 //   return a + b;
 // };
 // console.log(sumPositiveNumbers(5, 6));
+
+// const month = 2;
+// switch (month) {
+//   case 12:
+//     console.log("Декабрь");
+//     break;
+//   case 1:
+//     console.log("Январь");
+//     break;
+//   case 2:
+//     console.log("Февраль");
+//     break;
+//   default:
+//     console.log("Это не зимний месяц");
+//     break;
+// }
+// если необходимо выполнить задачу исходя из значений той или иной переменной, то лучше использовать инструкцию switch
+
+//-------------Тернарные операторы--------------
+
+// тернарный оператор это выражение, можно использовать чтоб присвоить значение переменной
+//Условие ? Выражение1 : Выражение2
+//внутри может быть только выражение, нельзя вставлять другую инструкцию типа if или while
+// const value = 11;
+// value ? console.log("Условие истино") : console.log("Условие ложно"); //условие истино
+
+// const value1 = 11;
+// const value2 = 25;
+
+// value1 && value2 ? myFunction1(value1, value2) : myFunction2();
+
+// let value = 11;
+// console.log(value >= 0 ? value : -value); //11
+// value = -5;
+// const res = value >= 0 ? value : -value;
+// console.log(res);
+
+//-------------Циклы-------------
+
+// const myArray = ['first', 'second', 'third'];
+// for (let i = 0; i < myArray.length; i++) {
+//   console.log(myArray[i]);
+// }// не рекомендуется исползовать с массивами
+
+// const myArray = ["first", "second", "third"];
+// myArray.forEach((element, index) => {
+//   console.log(element, index);
+// }); рекомендуется использовать с массивами
+
+// for (key in Object) {
+// key это название свойства объекта
+//действия с каждым свойством объекта
+//значение свойства - Object[key]
+// }
+
+// const myObject = {
+//   x: 10,
+//   y: true,
+//   z: "abc",
+// };
+
+// for (const key in myObject) {
+//   console.log(key, myObject[key]);
+// }
+
+// const myObject = {
+//   x: 10,
+//   y: true,
+//   z: "abc",
+// };
+
+// Object.keys(myObject).forEach((key) => {
+//получение всех ключей объекта, формирует массив
+//   console.log(key, myObject[key]);
+// });
+
+// Object.values(myObject).forEach((value) => {
+//   console.log(value); // получает все значения свойств определенного объекта, формирует массив(конвертирует объект в массив)
+// });
+
+//благодаря методам keys и values можно трансформировать объект в массив
+
+// const myArray = [true, 10, 'abc', null]
+
+// for (const key in myArray) {
+//   console.log(myArray[key]);
+// }
+
+// for (Element of Iterable) {
+//Действия с определенным элементом
+// }
+
+// const myString = "Hey";
+
+// for (const letter of myString) {
+//   console.log(letter); // H e y выведет значения каждой буквы с новой строки
+// }
+
+// const myArray = [true, 10, 'abc', null];
+
+// for (const element of myArray) {
+//   console.log(element); // выведет true, 10, abc, null с новой строки
+// }
+
+//myArray.forEach(element => {
+// console.log(element); аналог функции for of,
+// })
+
+// for of  нельзя использовать для оюъектов
+
+//---------------модули--------------
+
+//export -- вывод
+//import -- ввод
+
+// const myName = () => {
+//   console.log("Mihail");
+// };
+
+// export default myName;
+// import printMyName from "./adsdad.js";
+// printMyName() //Mihail
+
+const sum = (a, b) => {
+  return a + b;
+};
+export default sum;
