@@ -928,7 +928,74 @@
 // import printMyName from "./adsdad.js";
 // printMyName() //Mihail
 
-const sum = (a, b) => {
-  return a + b;
-};
-export default sum;
+// const sum = (a, b) => {
+//   return a + b;
+// };
+// export default sum;
+
+// const one = 1;
+// const two = 'two'
+
+// export {
+//   one,
+//   two
+// }
+
+//------------классы-------------
+
+//классы позволяют создавать протатипы для объектов
+
+// class Comment {
+//   constructor(text) {// вызывается только тогда когда мы создаем новый экземпляр класса
+//     this.text = text
+//     this.votesQty = 0
+//   }
+//   upvote() {//будут наследоваться каждым экземпляром 
+//     this.votesQty += 1
+//   }
+// }
+
+// this - это специальная переменная которая указывает на экземпляр класса
+
+// const firstComment = new Comment('First comment'); //вызывается функция constructor, вернет новый объект, который будет наследовать все методы класса комментарий(Comment)
+// console.log(firstComment);
+
+// console.log(firstComment instanceof Comment);// true, проверка принадлежности
+// console.log(firstComment instanceof Object);// true
+
+//firstComment.upvote()
+// console.log(firstComment.votesQty);//1
+//firstComment.upvote()
+// console.log(firstComment.votesQty);//2
+
+//firstComment.hasOwnProperty('text')// проверяет есть ли у этого экземпляра собственное свойство text //true
+//firstComment.hasOwnProperty('votesQty') //true
+//firstComment.hasOwnProperty('upvote') //false
+//firstComment.hasOwnProperty('hasOwnProperty')//false
+
+// const firstComment = new Comment('First comment');
+// const secondComment = new Comment('Second comment');
+// const thirdComment = new Comment('Third comment');
+
+// firstComment.upvote();
+// firstComment.upvote();
+// secondComment.upvote();
+
+// console.log(firstComment.votesQty);
+// console.log(secondComment.votesQty);
+// console.log(thirdComment.votesQty);
+
+// class Comment {
+//   constructor(text) {
+//     this.text = text
+//     this.votesQty = 0
+//   }
+//   upvote() {
+//     this.votesQty += 1
+//   }
+//   static mergeComments(first, second) {//static свойства не наследуются экземплярами классов, но они доступны как методы данного класса
+//     return `${first} ${second}`
+//   }
+// }
+
+// Comment.mergeComments('First comment.', 'Second comment')
