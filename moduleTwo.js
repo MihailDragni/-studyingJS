@@ -16,3 +16,4 @@
 //   one as oneRenamed, //испорт и переименование переменной
 //   two
 // } from './train.js'
+

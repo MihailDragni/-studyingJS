@@ -950,7 +950,7 @@
 //     this.text = text
 //     this.votesQty = 0
 //   }
-//   upvote() {//будут наследоваться каждым экземпляром 
+//   upvote() {//будут наследоваться каждым экземпляром
 //     this.votesQty += 1
 //   }
 // }
@@ -999,3 +999,475 @@
 // }
 
 // Comment.mergeComments('First comment.', 'Second comment')
+
+//статические методы не наследуются экземлярами класса, его можно вызвать только через сам класс.
+
+//расширение классов
+// class NumbersArray extends Array {
+//   sum() {
+//     return this.reduce((el, acc) => acc += el, 0)
+//   }
+// }
+
+// const myArray = new NumbersArray(2, 5, 7)
+// console.log(myArray);
+// myArray.sum();
+
+//--------------------------------------------------------
+
+// let age = 26;
+// console.log(age.toString());
+// console.log(String(age));
+// console.log(typeof age);
+
+//функция рандомных чисел в диапазоне
+// function getRandomBetween(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min)
+// }
+// console.log(getRandomBetween(10, 42));
+
+//--------работа со строками---
+// const name = 'Владилен';
+// console.log(name.length);//8
+// console.log(name.toUpperCase());//ВЛАДИЛЕН
+// console.log(name.toLowerCase());//владилен
+// console.log(name.charAt(2));//а
+// console.log(name.indexOf("а"));//2
+// console.log(name.startsWith('!'));//false
+// console.log(name.endsWith('ен'));//true
+// console.log(name.repeat(3));//ВладиленВладиленВладилен
+// console.log(name.trim()); //очищает пробелы
+// console.log(name.trimLeft()); //очищает пробелы c лева
+// console.log(name.trimRight()); //очищает пробелы с права
+
+// function logPerson(s, name, age) {
+//   console.log(s, name, age);
+//   return `${s[0]}${name}${s[1]}${age}${s[2]}`
+// }
+
+// const personName = 'Владилен'
+// const personAge = 26
+
+// const output = logPerson`Имя: ${personName}, Возраст: ${personAge}!`
+// console.log(output);
+
+// const myArr = ['aada', 'asda', 'adsa', 'adasd', 'vasya', 'petya'];
+// let counter = 0;
+// setInterval(function () {
+//   if (counter >= 0 && counter <= 9) {
+//     console.log(counter + 1, myArr[counter++]);
+//   }
+// }, 1000);
+
+// function sum(source) {
+//   let res = 0;
+//   for(let i = 0; i < source.length; i++) {
+//     res += source[i];
+//   }
+//   return res;
+// }
+
+// console.log(sum([1,2,3]));
+
+// const n = 150;
+// let sum = 0;
+
+// for (let i = 1; i <= n; i++) {
+//   sum += i;
+// }
+
+// console.log(sum); //11325
+
+// const n = 150;
+// let sum = 0;
+// let i = n;
+
+// while (i > 0) {
+//   sum += i;
+//   i--;
+// }
+
+// console.log('Result: ' + sum);//11325
+
+// const m = 5;
+// const n = 21;
+// let result = 1;
+
+// for (let i = m; i <= n; i++) {
+//   if (i % 2 === 1) {
+//     result *= i;
+//   }
+// }
+// console.log(result); //4583103525
+
+// const m = 5;
+// const n = 21;
+// let result = 1;
+
+// let i = m;
+
+// do {
+//   if (i % 2 === 1) {
+//     result *= i;
+//   }
+//   i++;
+// } while (i <= n);
+
+// console.log('Result: ' + result); //4583103525
+
+// for (let i = 1; i <= 5; i++) {
+//   console.log(`\n==> ${i} <==\n\n`);
+//   for (let n = 1; n <= 10; n++) {
+//     let result;
+//     result = n * i;
+//     console.log(`${i} x ${n} = ${result}`);
+//   }
+// }
+
+// let sum = (a, b) => a + b;
+// console.log(sum(2, 5));
+
+// function sum1 (a, b) {
+//   return a + b
+// }
+// console.log(sum1(3, 6));
+
+// const sayHi = name => `Hi, ${name}!`;
+// console.log(sayHi('Ivan'));
+
+// function hi (name = 'User', anotherName) {
+//   console.log(arguments[1]);
+//   return `Hi, ${name}`
+// }
+// console.log(hi());
+
+// const getEvenOdd = number => (number % 2 === 0)? `even`: `odd`;
+// console.log(getEvenOdd(5));
+
+// const sum = (num1, num2) => num1 + num2;
+// console.log(sum(3, 5));
+
+// const sayHi = name => `Hi, ${name}`;
+// console.log(sayHi('Ivan'));
+
+// const getEvenOdd = function (number) {
+//   return (number % 2 === 0)? 'Even': 'Odd';
+// }
+// console.log(getEvenOdd(6));
+
+// const square = num =>  num * num;
+// console.log(square(6));
+
+// const numbers = [1, 2, 3, 4];
+// const arr = new Array();
+
+// console.log(`Element #1 ${numbers[1]}`);
+// console.log(`Element last ${numbers[numbers.length - 1]}`);
+
+// const numbers = [1, 2, 3, 4];
+// function getArrayBoun(arr) {
+//   if(!Array.isArray(arr)) {
+//     return null;
+//   }
+//   return [arr.length, arr[0], arr[arr.length - 1]];
+// }
+// console.log(getArrayBoun(numbers));
+
+// const numbers = [1, 2, 3, 4];
+// let sumOfNumbers = 0;
+// for (let i = 0; i < numbers.length; i++) {
+//   console.log(numbers[i]);
+//   sumOfNumbers += numbers[i];
+// }
+
+// console.log(sumOfNumbers);
+//-------вычисляет сумму чисел в массиве----
+// const numbers = [1, 2, 3, 4];
+// function sum(numbers) {
+//   let sumOfNumbers = 0;
+
+//  for(let num of numbers) {
+//    sumOfNumbers += num; // проходится по всем элементам массива и присваивает значение премерменной num
+//  }
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     console.log(numbers[i]);
+//     sumOfNumbers += numbers[i];
+//   }
+//   return sumOfNumbers;
+// }
+
+// const sumOfElements = sum(numbers);
+
+// console.log("result: " + sumOfElements);
+// const people = ['Tom', 'Ann', 'Bob'];
+// people.push('Jack', 'John');//добавлем в конец
+// people.unshift('Ivan')//добавляем в начало
+// const deleteLastElem = people.pop();//удаляет и возвращет удаленный элемент
+// const deleteFirstElem = people.shift();//удаляет и возвращет удаленный элемент
+// console.log(people);
+
+// function getSpecialNumbers(from, to) {
+//   let specialNumbers = [];
+//   for (let i = from; i <= to; i++) {
+//     if(i % 3 === 0) {
+//       specialNumbers.push(i);
+//     }
+//   }
+//   return specialNumbers;
+// }
+// const specialNumbers = getSpecialNumbers(10, 30);
+// console.log(specialNumbers);
+
+// const numbers = [11, 22, 33, 55, 66];
+// const [a, b, ...rest] = numbers;
+// console.log(a, b, [1, 2, 3, ...rest]);
+
+// function swap(arr) {
+//   const [start, ...rest] = arr;
+//   return [...rest, start];
+// }
+
+// console.log(swap([1, 2, 3, 4]));
+
+//for in переберает ключи объекта (только для объекта)
+//for of перебирает значения объекта
+// const myArr = [1, 2, 3, 4];
+// function getArrayBoun(arr) {
+//   if(!Array.isArray(arr)) {
+//     return null;
+//   }
+//   return [arr.length, arr[0], arr[arr.length-1]];
+// }
+// console.log(getArrayBoun(myArr));
+
+// const myArr = [1, 2, 3, 4, 5];
+// function getSum(arrNum) {
+//   let result = 0;
+//   if(!Array.isArray(arrNum)) {
+//     return null;
+//   }
+//   for (let i of arrNum) {
+//     result += i;
+//   }
+//   return result;
+// }
+// console.log(getSum(myArr));
+
+// function getSpecialNumbers(from, to) {
+//   if (!(Number.isInteger(from) && Number.isInteger(to))) {
+//     return `Error`;
+//   }
+//   const result = [];
+//   for (let i = from; i <= to; i++) {
+//     if (i % 3 === 0) {
+//       result.push(i);
+//     }
+//   }
+//   return result;
+// }
+// console.log(getSpecialNumbers(20, 50));
+// const myArr = [1, 2, 3, 4, 5];
+// const swap = arr => {
+//   const [first, ...rest] = arr;
+//   return [...rest, first]
+// }
+// console.log(swap(myArr));
+// console.log(myArr);
+
+// const getSpecialNumbers = (numbers) => numbers.filter((numArr) => numArr % 3 === 0); // -- 4 -- сокращенный вариант
+// let specialNumbers = [];
+//обычный for -- 1 --
+// for (let i = 0; i < numbers.length; i++) {
+//   if(numbers[i] % 3 === 0) {
+//     specialNumbers.push(numbers[i]);
+//   }
+// }
+// forEach -- 2 --
+// numbers.forEach(numArr => {
+//   if(numArr % 3 === 0){
+//     specialNumbers.push(numArr);
+//   }
+// });
+//filter -- 3 --
+// const result = numbers.filter((numArr) => numArr % 3 === 0);
+//создает новый массив,наполняет его элем которые возвращают из колбэка тру
+// return numArr % 3 === 0 ? true: false;
+// return numbers.filter((numArr) => numArr % 3 === 0);
+// };
+
+// const getSpecialNumbers = arr => arr.filter(numArr => numArr % 3 === 0);
+// const myArr = [1, 2, 3, 4, 5, 6];
+
+//   function getSpecialNumbers(arr) {
+//     const specialNumbers = [];
+//     arr.forEach(function(numArr) {
+//       if(numArr % 3 === 0) {
+//         specialNumbers.push(numArr);
+//       }
+//     });
+//     return specialNumbers
+//   }
+
+// console.log(getSpecialNumbers(myArr));
+
+// const getSpecialNumbers = arr => arr.filter(numArr => numArr % 3 === 0);
+// console.log(getSpecialNumbers(myArr));
+// const myArr = [1, 2, 3, 4, 5, 6];
+
+// const getSpecialNumbers = arr => arr.filter(numArr => numArr % 3 === 0);
+// console.log(getSpecialNumbers(myArr));
+// const sortArray = (numbersArr) => numbersArr.slice().sort((a, b) => a - b);
+// const copy = [...numbersArr]; //копирование массива
+// const copy = numbersArr.slice(); //копирует и возвращет, если не передать аргум то копирует все
+// return numbersArr.slice().sort((a, b) => a - b);
+// }
+// console.log(sortArray(arr));
+// console.log(arr);
+// const arr = [2, 4, 30, 1, 5, 21, 18];
+
+// const flatArray = (arr) => {};
+
+// [1, 2, 3, 4, 5].reduce((acc, num) => {
+//   return acc + num;
+// }, 0)
+
+// let a = [1, 2, 3, 4];
+// let sum = 0;
+// for (let i = 0; i < a.length; i++) {
+//   sum = sum + a[i];
+// }
+// console.log(sum);
+//prev - вычисляемое значение
+//prev= a[0]!!!
+
+// let b = a.reduce((prev, item, index) =>{
+//   return prev + item;
+// }, 0)
+
+// console.log(b);
+
+// let a = [3, 1, 2, 5, 1, 2, 4];
+// let max = a[0];
+// for (let i = 0; i < a.length; i++) {
+//   if (a[i] > max) {
+//     max = a[i];
+//   }
+// }
+// console.log(max);
+
+// let c = a.reduce((prev, item) => {
+//   if (prev < item) {
+//     return item;
+//   }
+//   return prev;
+// })
+
+// const c = a.reduce((prev, item) => prev < item ? item: prev);
+
+// let max = a[0];
+// let index = 0;
+// for (let i = 0; i < a.length; i++) {
+//   if (a[i] > max) {
+//     max = a[i];
+//     index = i;
+//   }
+// }
+
+// let d = a.reduce(
+//   (prev, item, index) => {
+//     if (item > prev[1]) {
+//       return [index, item];
+//     }
+//     return prev;
+//   },
+//   [0, a[0]]
+// );
+
+// console.log(d);
+// [1, 2, 3, 4].reduce(function (acc, num) {
+//   return acc + num;
+// }, 0);
+
+// const data = [
+//   [1, 2, 3],
+//   [3, 4, 5],
+//   [5, 6, 7],
+// ];
+// const myArr = [1, [2, 3, 4], 5, [6]];
+
+// const flatArr = (arr) => arr.reduce((acc, elem) => {
+//     return acc.concat(elem);
+//   }, []);
+// console.log(flatArr(myArr));
+
+// let arr = [1,2,3];
+// arr.push(4); //мутирует добавляет елем
+// const newArr = arr.concat(4,5,6,7,8);//не мутирует создает новый массив и добовляет елем
+// console.log(arr);//[1,2,3]
+// console.log(newArr);//[1,2,3,4,5,6,7,8]
+// const allStudents = ["Ann", "Tom", "Bob", "Kate"];
+// const failedStudents = ["Tom", "Bob"];
+
+// const getMessagesForPassesStudents = (allStudents, failedStudents) =>
+//   allStudents
+//     .filter((name) => !failedStudents.includes(name))
+//     .map((name) => `Good job, ${name}`);
+
+// console.log(getMessagesForPassesStudents(allStudents, failedStudents));
+// const myArray = [20, 16, 15, 12, 21, 31, 28];
+
+// function getSpecialNumbers(arr) {
+//   const result = [];
+//   arr.forEach(function (element) {
+//     if(element % 3 === 0) {
+//       result.push(element);
+//     }
+//   })
+//   return result;
+// }
+
+// function getSpecialNumbers(arr) {
+//   let result = arr.reduce((acc, elem) => {
+//     if (elem % 3 === 0) {
+//       acc.push(elem);
+//     }
+//     return acc;
+//   }, []);
+//   return result;
+// }
+
+// const getSpecialNumbers = (arr) => arr.reduce((acc, elem) => {
+//   if (elem % 3 === 0) {
+//     acc.push(elem);
+//   }
+//   return acc
+// }, []);
+
+// const getSpecialNumbers = arr =>  arr.filter(elem => elem % 3 === 0)
+
+// console.log(getSpecialNumbers(myArray));
+
+// const myArray = [20, 16, [15], 12, [21], 31, 28];
+
+// function sortDesc(arr) {
+//   const newArr = arr.slice();
+//   return newArr.sort((a, b) => b - a);
+// }
+
+// const sortDesc = (arr) => arr.slice().sort((a, b) => b - a);
+
+// const flatArray = (arr) => arr.reduce((acc, elem) => acc.concat(elem), []);
+// const flatArray = arr => arr.flat();
+
+// console.log(flatArray(myArray));
+// const allStudets = ["Ann", "Bob", "John", "Ivan", "Kate"];
+// const failedStudents = ["Ivan", "Kate"];
+
+// const getMessagesForBestStudents = (allStudets, failedStudents) =>
+//   allStudets
+//     .filter((name) => !failedStudents.includes(name))
+//     .map((name) => "Good job! " + name);
+
+
+// console.log(getMessagesForBestStudents(allStudets, failedStudents));
