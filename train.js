@@ -1605,16 +1605,121 @@
 // console.log(transformToArray(user));
 
 // console.log(transformToObject(myArr));
+// const myArr = [1,2,3,4,5,6];
 
-const user = {
-  Tom: 17,
-  "John Doe": 19,
-  Bob: 18,
-};
+// const transformToObject = arr => {
+//   return arr.reduce((acc, el) => {
+//     acc[el] = el;
+//     return acc
+//   }, {})
+// }
 
-const getAdults = (usersObj) => {
-  const usersArray = Object.entries(usersObj);
-  const filteredUsersArray = usersArray.filter();
-};
+// console.log(transformToObject(myArr));
 
-// console.log(Object.entries(user));
+// const transformToArray = obj => {
+//   let newArray = [];
+//   for(let key in obj){
+//     newArray = newArray.concat(obj[key]);
+//   }
+
+//   return newArray;
+// }
+
+// console.log(transformToArray(user));
+
+// const user = {
+//   Tom: 17,
+//   "John Doe": 19,
+//   Bob: 18,
+// };
+
+// const getAdults = (usersObj) => {
+//   const usersArray = Object.entries(usersObj);
+//---------{'Tom: 17', 'John Doe': 19, 'Bob': 18} => [['Tom, 17'], ['John Doe', 19], ['Bob', 18] ]------
+
+//   const filteredUsersArray = usersArray.filter((user) => user[1] >= 18);
+//--------[['Tom, 17'], ['John Doe', 19], ['Bob', 18] ] => [['John Doe', 19], ['Bob', 18]]-----
+
+//   const usersName = filteredUsersArray.map((user) => user[0]);
+//------[['John Doe', 19], ['Bob', 18]] =>  ['John Doe', 'Bob']------
+//   return usersName;
+// };
+
+// console.log(getAdults(user));
+
+// const getAdults = usersObj => {
+//   const usersArray = Object.entries(usersObj);
+//   const filteredUsersArray = usersArray.filter(el => {
+//     return el[1] >= 18;
+//   })
+//   const usersName = filteredUsersArray.map(el => {
+//     return el[0];
+//   })
+//   return usersName;
+// }
+
+// console.log(getAdults(user));
+
+// const getAdults = usersObj => Object.entries(usersObj).filter(el => el[1] >= 18).map(el => el[0]);
+// const myArr = [1,2,3,4,5,6];
+
+// const transformToArray = obj => {
+//   let newArr = [];
+//   for(let k in obj) {
+//     newArr = newArr.concat(obj[k]);
+//   }
+//   return newArr;
+// }
+
+// const valuesFromObject = obj => Object.values(obj);
+// console.log(valuesFromObject(user));//[17, 19, 18]
+// const keysFromObject = obj => Object.keys(obj);
+// console.log(valuesFromObject(user));//['Tom', 'John Doe', 'Bob']
+
+// const user = {
+//   name : 'Tom',
+//   age: 17,
+// };
+
+//------1------копируем объект в новый объект (копирует на одном уровне)
+// const newObj = Object.assign({}, user);
+//функция еопирования объекта
+// const copyObj = obj => Object.assign({}, obj);
+
+//-----2------копируем объект (копирует на одном уровне)
+// const player = {...user};
+
+//-----3----- (копирует на одном уровне)
+// const {name: myName = 'default', ...restProps} = user;
+// console.log(myName);
+// console.log(restProps);
+
+// const player = {
+//   game: 'football',
+//   ...restProps,
+// }
+
+// console.log(player);
+
+// const users = {
+//   "John Doe": 19,
+//   Tom: 17,
+//   Bob: 18,
+// };
+
+// const getAdults = (usersObj) =>
+//   Object.entries(usersObj)
+//     .filter((el) => el[1] >= 18)
+//     .map((el) => el[0]);
+
+// console.log(getAdults(users));
+
+// const copyObj = obj => Object.assign({}, obj);
+
+// const copyObj = obj => ({ ...obj });
+
+// const copyObj = obj => {
+//   const { ...newObj} = obj
+//   return newObj;
+// }
+// console.log(copyObj(users));
