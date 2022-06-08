@@ -1229,9 +1229,10 @@
 // }
 
 // console.log(swap([1, 2, 3, 4]));
-
+//--------------
 //for in переберает ключи объекта (только для объекта)
-//for of перебирает значения объекта
+//for of перебирает значения массива
+//----------------
 // const myArr = [1, 2, 3, 4];
 // function getArrayBoun(arr) {
 //   if(!Array.isArray(arr)) {
@@ -1469,5 +1470,151 @@
 //     .filter((name) => !failedStudents.includes(name))
 //     .map((name) => "Good job! " + name);
 
-
 // console.log(getMessagesForBestStudents(allStudets, failedStudents));
+
+//forEach
+// myArr.forEach(name => {
+//   console.log((name));
+// })
+
+//filter
+// const userLess30 = myArr.filter(number => number > 5);
+// console.log(userLess30);
+
+//reduce
+//создаем из массива объект
+// const userObj = arr.reduce((acc, user) => {
+//   acc[user._id] = user;
+//   return acc
+// }, {});
+
+// const myArr = [1, 2, 3, 4, 5, [6], 7, 8, 9];
+// const getSpecialNumbers = arr => arr.filter(number => number % 3 === 0);
+// const sortDesc = arr => arr.slice().sort((a, b) => b - a)
+// const flatArray = (arr) => arr.reduce((acc, elem) => acc.concat(elem), []);
+
+// const all = ['a', 'b', 'c', 'd'];
+// const failed = ["b", "d"];
+
+// const getMessagesForBestStudents = (all, failed) => all.filter((elem) => !failed.includes(elem)).map((elem) => `Good job ${elem}!`)
+
+// console.log(getMessagesForBestStudents(all, failed));
+
+// const transformToObject = (arr) => {
+//   let obj = {};
+//   arr.forEach((el) => {
+//     obj[el] = el;
+//   });
+//   return obj;
+// };
+// const myArr = [1, "text"];
+// console.log(transformToObject(myArr));
+
+// const user = {
+//   name: "Tom",
+//   age: 17,
+// };
+
+// for (let key in user) {
+//   console.log(user[key]);
+// }
+
+// const concatProps = (obj) => {
+//   const arr = [];
+//   for (let i in obj) {
+//     arr.push(obj[i]);
+//   }
+//   return arr;
+// };
+// console.log(concatProps(user));
+
+// const concatProps = (obj) => {
+//   let arr = [];
+//   for (let i in obj) {
+//     arr = arr.concat(obj[i])
+//   }
+//   return arr;
+// };
+// console.log(concatProps(user));
+
+// const myArr = ['a', 17.1, 'John Doe'];
+
+// const transformToObject = arr => {
+//   const obj = {};
+//   arr.forEach(el => obj[el] = el)
+//   return obj;
+// }
+// console.log(transformToObject(myArr));
+// const myObj = {
+//   name: "John Doe",
+//   age: 17,
+//   interest: "football",
+// };
+
+// const myArr = [1,2,3,4,5];
+
+// const concatProps = (obj, arr) => {
+//   const newArr = arr.slice();
+//   for (let key in obj){
+//     newArr.push(obj[key])
+//   }
+//   return newArr
+// }
+
+// const concatProps = (obj, arr) => {
+//   for (let key in obj){
+//     arr = arr.concat(obj[key]);
+//   }
+//   return arr
+// }
+
+// console.log(concatProps(myObj, myArr));
+// console.log(myArr);
+
+// const transformToObject = arr => {
+// const obj  = {};
+
+// arr.forEach(el => obj[el] = el);
+
+// return obj;
+
+// return arr.reduce((acc, el) => {
+//   acc[el] = el;
+//   return acc;
+// }, {});
+// }
+
+// const transformToObject = arr => arr.reduce((acc, el) => {
+//   acc[el] = el;
+//   return acc;
+// }, {})
+
+// const user = {
+//   name: "Tom",
+//   age: 17,
+// };
+
+// const transformToArray = obj => {
+//   let newArr = [];
+//   for(let k in obj) {
+//     newArr = newArr.concat(obj[k]);
+//   }
+//   return newArr;
+// }
+
+// console.log(transformToArray(user));
+
+// console.log(transformToObject(myArr));
+
+const user = {
+  Tom: 17,
+  "John Doe": 19,
+  Bob: 18,
+};
+
+const getAdults = (usersObj) => {
+  const usersArray = Object.entries(usersObj);
+  const filteredUsersArray = usersArray.filter();
+};
+
+// console.log(Object.entries(user));
