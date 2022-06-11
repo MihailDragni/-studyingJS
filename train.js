@@ -2017,4 +2017,73 @@ const contacts = [
 // };
 // console.log(sortContacts(contacts));
 
+//'1 + 2'
 
+// const calc = (expression) => {
+//   const [a, operator, b] = expression.split(" ");
+//   let result;
+//   switch (operator) {
+//     case "+":
+//       result = Number(a) + Number(b);
+//       break;
+
+//     case "-":
+//       result = Number(a) - Number(b);
+//       break;
+
+//     case "*":
+//       result = Number(a) * Number(b);
+//       break;
+
+//     case "/":
+//       result = Number(a) / Number(b);
+//       break;
+//   }
+//   return `${expression} = ${result}`;
+// };
+
+// console.log(calc("6 - 9"));
+
+// const calc = (expression) => {
+//   const [a, operator, b] = expression.split(" ");
+//   let result;
+//   switch (operator) {
+//     case "+":
+//       result = Number(a) + Number(b);
+//       break;
+//     case "-":
+//       result = Number(a) - Number(b);
+//       break;
+//     case "*":
+//       result = Number(a) * Number(b);
+//       break;
+//     case "/":
+//       result = Number(a) / Number(b);
+//       break;
+//   }
+//   return `${expression} = ${result}`;
+// };
+
+// console.log(calc("3 + 6"));
+
+// const calc = (expression) => {
+//   const [a, operator, b] = expression.split(" ");
+//   let result;
+//   switch (operator) {
+//     case "+":
+//       result = Number(a) + Number(b);
+//       break;
+//     case "-":
+//       result = Number(a) - Number(b);
+//       break;
+//     case "*":
+//       result = Number(a) * Number(b);
+//       break;
+//     case "/":
+//       result = Number(a) / Number(b);
+//       break;
+//   }
+//   return `${expression} = ${result}`;
+// };
+
+// console.log(calc("5 / 10"));
