@@ -1723,3 +1723,298 @@
 //   return newObj;
 // }
 // console.log(copyObj(users));
+// const num = 17.15
+
+// console.log(Number.parseInt(num));
+// console.log(Number.parseFloat(num));
+
+// const elementList = [4, 5.6, '5.7kl', null, NaN, undefined, Infinity];
+
+// const parseArray = arr => {
+//   return arr.map(el => {
+//     return Number.parseFloat(el);
+//   })
+// }
+
+// const parseFloat = arr => arr.map( el => Number.parseFloat(el));
+
+// console.log(parseFloat(elementList));
+
+// const parseFloat = arr => {
+//   return arr.map(el => {
+//     return Number.parseFloat(el);
+//   })
+// }
+
+// console.log(parseFloat(elementList));//[4, 5.6, 5.7, NaN, NaN, NaN, Infinity]
+//----округление----
+Math.ceil(17.17); //округляет до большего целого числа //18
+Math.floor(17.71); //округляет до меньшего целого числа //17
+Math.round(17.5); //округляет как в математике //18
+Math.trunc(-17.5); //отбрасывает дробную часть// -17
+
+Math.abs(-17); //17
+Math.max(5, 7, 17, 1); //17
+Math.max(5, 7, 1, -4); //-4
+
+Math.pow(3, 4); //81
+Math.sqrt(9); //3
+
+//--------------1---------
+// element.topFixed(n)//n количество цифр после запятой для округления
+Math.PI.toFixed(3); // 3.141592653589793 => 3.142 возвращет строку, для превращения в цифру необходимо выражение обернуть в Number или поставить знак + перед выражением
+// +Math.PI.toFixed(3)
+
+//--------------2---------
+Math.round(Math.PI * 1000) / 1000; // 3.142 сколько нулей мы умножаем и делим столько и цифр будет после знаков запятой
+
+//----Number.isFinite() в отличии от isFinite() не приводит елемент к числу
+//----Number.parseInt() и parseInt() работают одинаково
+
+// const multiRound = num => [
+//   Math.round(num * 100) /100,
+//   Math.floor(num * 100) /100,
+//   Math.ceil(num * 100) /100,
+//   Math.trunc(num * 100) /100,
+//   +num.toFixed(2)
+// ];
+
+//   console.log(multiRound(Math.PI)); //[3.14, 3.14, 3.15, 3.14, 3.14]
+// const myArr = [2, -6, 78, -99];
+
+// const getMaxAbsoluteNumber = arr => {
+//   let max = -Infinity;
+//   arr.forEach(num => {
+//     if (Math.abs(num) > max) {
+//       max = Math.abs(num);
+//     }
+//   })
+//   return max;
+// }
+
+// const getMaxAbsoluteNumber = arr => {
+//   const absoluteValues = arr.map(num => Math.abs(num));
+//[2, 6, 78, 99]
+//   const max = Math.max(...absoluteValues);
+//   return max
+// }
+
+// console.log(getMaxAbsoluteNumber(myArr));
+
+// const myArr = [2, -6, 78, -99, NaN, undefined, null, Infinity, -Infinity, 0, -0, -NaN]
+
+// const getFiniteNumbers = arr => arr.filter(el => Number.isFinite(el));
+// console.log(getFiniteNumbers(myArr));//[2, -6, 78, -99, 0, -0]
+
+// const getFiniteNumbersV2 = arr => arr.filter(el => isFinite(el));
+// console.log(getFiniteNumbersV2(myArr));//[2, -6, 78, -99, null, 0, -0]
+
+// const getNaN = arr => arr.filter(el => Number.isNaN(el));
+// console.log(getNaN(myArr));
+
+// const getNaNV2 = arr => arr.filter(el => isNaN(el));
+// console.log(getNaNV2(myArr));
+
+// const getIntegers = arr => arr.filter(el => Number.isInteger(el));
+// console.log(getIntegers(myArr));
+
+// const getParsedIntegers = arr => arr.map(el => Number.parseInt(el));
+// console.log(getParsedIntegers(myArr));
+
+// const getParsedIntegersV2 = arr => arr.map(el => parseInt(el));
+// console.log(getParsedIntegersV2(myArr));
+
+// const getParsedFloats = arr => arr.map(el => Number.parseFloat(el))
+// console.log(getParsedFloats(myArr));
+
+// const getParsedFloatsV2 = (arr) => arr.map((el) => parseFloat(el));
+// console.log(getParsedFloats(myArr));
+
+// const myArr = [2, -6, 78, -99, NaN, undefined, null, Infinity, -Infinity, 0, -0, -NaN]
+
+// const multiRound = num => [
+//   Math.floor(num * 100) /100, //15.56
+//   Math.round(num * 100) /100, //15.56
+//   Math.ceil(num * 100) /100, //15.57
+//   Math.trunc(num * 100) /100, //15.56
+//   +num.toFixed(2) //15.56
+// ]
+
+// console.log(multiRound(15.564)); //
+// const myArr = [-777, 3, -1, 45, -20];
+
+// const getMaxAbsoluteNumber = (arr) => {
+//   if (!Array.isArray(arr) || arr.length === 0) {
+//     return null;
+//   }
+//   const absolutedArray = arr.map((el) => Math.abs(el));
+//   return Math.max(...absolutedArray);
+// };
+// console.log(getMaxAbsoluteNumber([]));
+
+// let message = 'Hello!'
+// let newMessage = message.concat('World!');
+// console.log(message);
+// console.log(newMessage);
+
+// console.log(message + ('World'));
+// console.log(message);
+// let message = 'Hello!'
+// console.log(message.split(''));
+
+//--методы строк--
+"text text".indexOf("te"); //0 ищет подобное возвращет индекс первого попавшегося, если нету то возв -1
+"text text".lastIndexOf("te"); // 5 ищет с конца, индексы считаются по прежнему с начала
+
+"text text".includes("te"); //true возв true если есть и false если нету
+"text text".startsWith("te"); //true если начинается с этой подстроки
+"text text".endsWith("xt"); //true если заканчивается с этой подстроки
+
+"text text".charAt(3); //t возвращет символ по индексу
+"text text".charCodeAt(3); //116 возвращет код символa по индексу
+
+"text text".toUpperCase(); //'TEXT TEXT'
+"text text".toLowerCase(); //'text text'
+
+"text".concat("text"); //склеивает строки
+"text".repeat(2); //'text text' повторяет строки
+"text".replace(/t/g, "T"); //'TexT' ищет символ из первого аргумента и заменяет на символ 2 аргумента
+"  text  ".trim(); //обрезает пробелы
+"text text".split(" "); //['text, 'text] разделяет символы в скобках указан символ по которому будет раздел, возвращает массив
+
+"text text".slice(2, 6); //'xt t' копирует с 1 аргумента(индекс), по 2 аргумент(сам 2 аргумент не входит)
+"text text".substr(2, 3); // 'me ' c 1 первого аргумента начинается и считывает количество символов, указанных во 2 аргументе(считает не по индексам а по символам)
+"text text".substring(2, 3); //'m' похож на slice но не работает с отрицателными числами, в отличии от slice
+
+String.fromCodePoint(65); //'A' выдает символ по коду
+"A".charCodeAt(0); //65 выдает код по символу
+
+// const splitText = (text, len) => {
+//   const strArr = [];
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = text.substr(startPosition, len);
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+//     startPosition += len;
+//   }
+//   return strArr.join("\n");
+// };
+
+// console.log(splitText('abcdefg', 4));
+
+// const message = 'привет как дела, что делаешь?';
+
+// const splitText = (text, len) => {
+//   let newArr = [];
+//   let startPosition = 0;
+//   while(true) {
+//     let chunk = text.substr(startPosition, len);
+//     if(chunk.length === 0){
+//       break;
+//     }
+//     newArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+//     startPosition += len;
+//   }
+//   return newArr.join('\n');
+// }
+
+// console.log(splitText(message, 7));
+
+// const splitText = (text, len) => {
+//   let myArr = [];
+//   let startPosition = 0;
+//   while(true) {
+//     let chunk = text.substr(startPosition, len);
+//     if(chunk.length === 0) {
+//       break;
+//     }
+//     myArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+//     startPosition += len;
+//   }
+//   return myArr.join('\n');
+// }
+
+// console.log(splitText(message, 7));
+
+const contacts = [
+  {
+    name: "Tom",
+    phoneNumber: "666-66-66",
+  },
+  {
+    name: "John",
+    phoneNumber: "555-55-55",
+  },
+  {
+    name: "Ann",
+    phoneNumber: "333-33-33",
+  },
+  {
+    name: "Stephan",
+    phoneNumber: "444-44-44",
+  },
+  {
+    name: "Suzy",
+    phoneNumber: "222-22-22",
+  },
+  {
+    name: "Adel",
+    phoneNumber: "111-11-11",
+  },
+];
+
+// const sortContacts = contacts => {
+//   const result = contacts.sort((a, b) => {
+//     return a.name.localeCompare(b.name);
+//   })
+//   return result
+// }
+
+// console.log(sortContacts(contacts));
+
+// const sortContacts = arr => {
+//   const result = arr.sort((a, b) => {
+//     return a.name.localeCompare(b.name);//сортирует по логике языка, в данном случае по возрастанию.
+//   })
+//   return result
+// }
+// console.log(sortContacts(contacts));
+// const message = "привет как дела, что делаешь?";
+
+// const splitText = (text, len = 10) => {
+//   if (typeof text !== "string") {
+//     return null;
+//   }
+//   let myArr = [];
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = text.substr(startPosition, len);
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     myArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+//     startPosition += len;
+//   }
+//   return myArr.join("\n");
+// };
+
+// console.log(splitText(message, 4));
+
+// const sortContacts = (arr, isAsc = true) => {
+//   if (!Array.isArray(arr)) {
+//     return null;
+//   }
+//   return arr.sort((a, b) => {
+//     if (isAsc === true) {
+//       return a.name.localeCompare(b.name);
+//     } else {
+//       return b.name.localeCompare(a.name);
+//     }
+//   });
+// };
+// console.log(sortContacts(contacts));
+
+
