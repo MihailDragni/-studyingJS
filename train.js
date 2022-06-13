@@ -2063,9 +2063,7 @@ const contacts = [
 //   }
 //   return `${expression} = ${result}`;
 // };
-
 // console.log(calc("3 + 6"));
-
 // const calc = (expression) => {
 //   const [a, operator, b] = expression.split(" ");
 //   let result;
@@ -2085,5 +2083,56 @@ const contacts = [
 //   }
 //   return `${expression} = ${result}`;
 // };
-
 // console.log(calc("5 / 10"));
+// const calc = (expression) => {
+//   let [a, operator, b] = expression.split(" ");
+//   let result;
+
+//   if(!isFinite(a || !isFinite(b))) {
+//     return 'Illegal operation';
+//   }
+
+//   a = +a;
+//   b = +b;
+//   switch (operator) {
+//     case "+":
+//       result = a + b;
+//       break;
+//     case "-":
+//       result = a - b;
+//       break;
+//     case "*":
+//       result = a * b;
+//       break;
+//     case "/":
+//       result = a / b;
+//       break;
+//   }
+//   return `${expression} = ${result}`;
+// };
+
+// console.log(calc('10 + 12'));
+
+// export const getSquaredNumbers = (arr) => {
+//   return arr.map((num) => num * num);
+// };
+
+// export const getOddNumbers = (arr) => {
+//   return arr.filter((num) => num % 2 === 1);
+// };
+
+// export default (a, b) => a + b;
+
+// export const getEvenNumbers = number => {
+//   return number.filter(el => el % 2 === 0);
+// }
+
+export const getSquaredArray = arr => {
+  return arr.map(el => el * el)
+}
+
+export const getOddNumbers = arr => {
+  return arr.filter(el => el % 2 === 1);
+}
+
+export default (a, b) => a + b;
