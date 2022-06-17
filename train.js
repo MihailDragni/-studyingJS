@@ -2127,12 +2127,283 @@ const contacts = [
 //   return number.filter(el => el % 2 === 0);
 // }
 
-export const getSquaredArray = arr => {
-  return arr.map(el => el * el)
+// export const getSquaredArray = arr => {
+//   return arr.map(el => el * el)
+// }
+
+// export const getOddNumbers = arr => {
+//   return arr.filter(el => el % 2 === 1);
+// }
+
+// export default (a, b) => a + b;
+// 'use strict';
+
+// let message = "Just lern it!";
+
+// function sendMessage (name) {
+//   const sender = "Mihail";
+//   console.log(`${name}, ${message}. Your ${sender}`);
+// };
+
+// function setMessage (text) {
+//   message = text;
+// }
+
+// sendMessage('Tom');
+// setMessage('Hello')
+// sendMessage('Tom')
+
+// const createMessanger = () => {
+//   let message = "Hi";
+//   function sendMessage(name) {
+//     const sender = "Mihail";
+//     console.log(`${name}, ${message}. Your ${sender}`);
+//   }
+
+//   function setMessage(text) {
+//     message = text;
+//   }
+
+//   return {
+//     sendMessage,
+//     setMessage,
+//   };
+// };
+
+// const messanger1 = createMessanger();
+
+// messanger1.sendMessage("Bob");
+
+// const messanger2 = createMessanger();
+
+// messanger2.sendMessage("Tom");
+// messanger2.setMessage('Hello');
+
+// messanger1.sendMessage("Bob");
+// messanger2.sendMessage("Tom");
+// let message = "Hello!";
+
+// const createMessanger = () => {
+//   const sendMessage = (name) => {
+//     const sender = "Mihail";
+//     console.log(`${name}, ${message}. Your ${sender}`);
+//   };
+
+//   const setMessage = (text) => {
+//     message = text;
+//   };
+
+//   return {
+//     sendMessage,
+//     setMessage,
+//   };
+// };
+
+// const messanger1 = createMessanger();
+// messanger1.setMessage("Privet");
+// messanger1.sendMessage("Anna");
+
+// export function createMessanger() {
+//   let sender = "Mihail";
+//   let message = "Just lern it";
+
+//   function setSender(newSender) {
+//     sender = newSender;
+//   }
+
+//   function setMessage(text) {
+//     message = text;
+//   }
+
+//   function sendMessage(name) {
+//     console.log(`${name}, ${message}! Your ${sender}`);
+//   }
+
+//   return {
+//     sendMessage,
+//     setMessage,
+//     setSender,
+//   };
+// }
+
+// function makeCounter () {
+//   let count = 0;
+//   return function () {
+//     return count++
+//   };
+// }
+
+// const counter1 = makeCounter();
+// const counter2 = makeCounter()
+
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+
+// function makeCounter () {
+//   let count = 0;
+//   return function() {
+//     return count++;
+//   }
+// }
+
+// export const counter1 = makeCounter();
+// export const counter2 = makeCounter();
+
+// function sayHiBye1(firstName, lastName) {
+//   const fullName = `${firstName} ${lastName}`;
+
+//   console.log(`Hello, ${fullName}`);
+//   console.log(`Bay, ${fullName}`);
+// }
+
+// sayHiBye1('Mihail', 'Dragni');
+
+// function sayHiBye2(firstName, lastName) {
+// функция-помощник, которую мы используем ниже
+//   function getFullName() {
+//     return firstName + " " + lastName;
+//   }
+
+//   console.log("Hello, " + getFullName());
+//   console.log("Bye, " + getFullName());
+// }
+
+// sayHiBye2("Mihail", "Dragni");
+
+// let message = 'Hello';
+
+// const sendMessage = (name) => {
+//   const sender = 'Mihail';
+//   console.log(`${name}, ${message}. Your ${sender}`);
+// }
+
+// const setMessage = text => {
+//   message = text;
+// }
+
+// sendMessage('Tom');
+// setMessage('Hi');
+
+// function counter() {
+//   let count = 0;
+//   return function callback() {
+//     return count++;
+//   };
+// }
+
+// const counter1 = counter();
+// const counter2 = counter();
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+
+// const message = 'Have a good day!';
+
+// function sendMessage(name) {
+//   let greeting = 'Hi! ';
+//   if (name ) {
+//     console.log(greeting + name);
+//   } else {
+//     console.log(message);
+//   }
+// }
+
+// sendMessage('Ivan');
+// var a = 17;
+// if (a) {
+//   var a = 19;
+//   console.log(a);
+// }
+
+// console.log(a);
+
+// var greeeting = "Hello";
+
+// function sayHi() {
+//   greeeting = "Hi";
+//   console.log(greeeting);
+//   if (false) {
+//     var greeeting;//всплывает на первую строку тела функции тем самым объявлется новая функция
+//   }
+// }
+
+// sayHi();
+// console.log(greeeting);//hi // hello
+
+// var arr = [];
+
+// for (var i = 0; i < 10; i++) {
+//   arr[i] = function () {
+//     return i;
+//   };
+// }
+
+// console.log(arr[5]());
+
+// const user = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 17,
+//   getFullName() {
+//     console.log(`${this.firstName} ${this.lastName}`);
+//   },
+// };
+
+// user.getFullName();
+
+// this - это ссылка на объект, который владеет этим методом(функкцией), в котором рассположен this
+//this - это объект перед точкой, с которого берет данные (user.getFullName());
+
+// const func = user.getFullName;
+// func()//underfined underfined //потеря контекста( this уже ни на что не указывает, так как перед func() ничего нету)
+
+
+
+//------------------.bind()- жестко привязывает контескт к функции, у которой она была вызвана, в качетве аргумента передается объкт с которого берутся данные, получает новую функцию, которую дальше можно использовать
+
+// const func = user.getFullName.bind(user);
+// func();
+
+//-----------.call()- принимает объект, который будет являтся контекстом вызова для функции перед точкой, сразу вызывает функцию, аргументы функции передаются через запятаю func.call(контекст, аргумент, аргумент)
+
+// const user = {
+//   name: "Doe",
+//   getFullName() {
+//     console.log(this.name);
+//   },
+// };
+// const func = user.getFullName;
+// func.call({ name: "Tom" });
+// user.getFullName.call({ name: "Tom" });
+
+
+//-----.apply() - работает как метод .call(), но принимает аргументы ввиде массива, func.apply(контекст, [аргумент, аргумент])
+// const user = {
+//   name: "Doe",
+//   sayHi(age, message) {
+//     console.log(`${message}, I'm ${this.name}, I'm ${age} years old`);
+//   },
+// };
+
+// const func = user.sayHi;
+// func.apply(user, [17, 'Hello']);
+
+const callbackPrompt = {
+  message: 'Tell me your number',
+  showPrompt() {
+    const phoneNumber = prompt(this.message);
+    console.log(phoneNumber);
+  },
+  showDeferredPromt(ms) {
+    setTimeout(this.showPrompt.bind(this), ms); 
+  }
 }
 
-export const getOddNumbers = arr => {
-  return arr.filter(el => el % 2 === 1);
-}
-
-export default (a, b) => a + b;
+callbackPrompt.showDeferredPromt(2000);

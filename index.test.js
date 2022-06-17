@@ -60,3 +60,16 @@
 //   const result = getSum(5, 26);
 //   expect(result).toEqual(31);
 // });
+
+// 
+
+// import { counter1, counter2 } from "./train.js";
+
+// it('should get number from counter', ()=> {
+//   expect(counter1()).toEqual(0);
+// })
+
+// it('should get number from counter', ()=> {
+//   expect(counter2()).toEqual(0);
+// })
+
