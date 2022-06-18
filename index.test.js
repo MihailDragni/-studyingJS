@@ -73,3 +73,31 @@
 //   expect(counter2()).toEqual(0);
 // })
 
+// import { user } from './train.js'
+
+// it ('should get full name from object', ()=> {
+//   const result = user.getFullName();
+//   expect(result).toEqual('Ivan Dragni')
+// })
+
+// import { callbackPrompt } from './train.js';
+
+// it('should', ()=> {
+//   const result = callbackPrompt.showDeferredPrompt(1000);
+//   expect(result).toEqual(1);
+// })
+
+// const user = {
+//   name: "Ivan",
+//   sayHi() {
+//     return(`Hi, I'am ${this.name}!`);
+//   },
+// };
+
+// import { defer } from './train.js';
+
+// it ('should get deffered function', ()=> {
+//   const result = defer(user.sayHi, 1000);
+//   expect(result()).toEqual(`Hi, I'am Ivan!`)
+// } )
+

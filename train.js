@@ -2359,12 +2359,10 @@ const contacts = [
 // user.getFullName();
 
 // this - это ссылка на объект, который владеет этим методом(функкцией), в котором рассположен this
-//this - это объект перед точкой, с которого берет данные (user.getFullName());
-
+//this - это объект перед точкой в момент вызова, с которого берет данные (user.getFullName());
+// контекст - это объект на который ссылается this
 // const func = user.getFullName;
 // func()//underfined underfined //потеря контекста( this уже ни на что не указывает, так как перед func() ничего нету)
-
-
 
 //------------------.bind()- жестко привязывает контескт к функции, у которой она была вызвана, в качетве аргумента передается объкт с которого берутся данные, получает новую функцию, которую дальше можно использовать
 
@@ -2383,7 +2381,6 @@ const contacts = [
 // func.call({ name: "Tom" });
 // user.getFullName.call({ name: "Tom" });
 
-
 //-----.apply() - работает как метод .call(), но принимает аргументы ввиде массива, func.apply(контекст, [аргумент, аргумент])
 // const user = {
 //   name: "Doe",
@@ -2395,15 +2392,90 @@ const contacts = [
 // const func = user.sayHi;
 // func.apply(user, [17, 'Hello']);
 
-const callbackPrompt = {
-  message: 'Tell me your number',
-  showPrompt() {
-    const phoneNumber = prompt(this.message);
-    console.log(phoneNumber);
-  },
-  showDeferredPromt(ms) {
-    setTimeout(this.showPrompt.bind(this), ms); 
-  }
-}
+// const callbackPrompt = {
+//   message: "Tell me your number",
+//   showPrompt() {
+//     const phoneNumber = prompt(this.message);
+//     console.log(phoneNumber);
+//   },
+//   showDeferredPromt(ms) {
+//     setTimeout(this.showPrompt.bind(this), ms);
+//   },
+// };
 
-callbackPrompt.showDeferredPromt(2000);
+// callbackPrompt.showDeferredPromt(2000);
+
+// const callbackPrompt = {
+//   message: 'privet kakaka',
+//   getPrompt() {
+//     const promptMessage = prompt(this.message);
+//     console.log(promptMessage);
+//   },
+//   getDefferedPrompt(ms) {
+//     setTimeout(this.getPrompt.bind(this), ms);
+//   },
+// }
+
+// callbackPrompt.getDefferedPrompt(2000);
+
+// const sayHi = () => {
+//   console.log('Hi');
+// }
+// const sum = (a, b) => {
+//   console.log(a + b);
+// }
+
+// function defer(func, ms) {
+//   return function () {
+//     setTimeout(() => func.apply(this, arguments), ms);
+//   };
+// }
+
+// const user = {
+//   name: "Ivan",
+//   sayHi() {
+//     console.log(`Hi, I'am ${this.name}!`);
+//   },
+// };
+
+// const deferedHi = defer(user.sayHi, 1000);
+
+// deferedHi.call({ name: "Mihail" });
+
+// export const user = {
+//   firstName: "Ivan",
+//   lastName: "Dragni",
+//   getFullName() {
+//     return (`${this.firstName} ${this.lastName}`);
+//   },
+// };
+// export const callbackPrompt = {
+//   message: "Get your number please, for contact whith you",
+//   showPrompt() {
+//     const userNumber = prompt(this.message);
+//     return(userNumber);
+//   },
+//   showDeferredPrompt(ms) {
+//     setInterval(this.showPrompt.bind(this), ms);
+//   },
+// };
+// callbackPrompt.showDeferredPrompt(1000);
+
+// const sum = (a, b) => console.log(a + b);
+
+// const user = {
+//   name: "Ivan",
+//   sayHi() {
+//     return(`Hi, I'am ${this.name}!`);
+//   },
+// };
+
+// export const defer = (func, ms) => {
+//   return function () {
+//     setInterval(() => func.apply(user, arguments), ms);
+//   };
+// };
+
+// const defferedSum = defer(user.sayHi, 2000);
+
+
